@@ -5,40 +5,46 @@ import java.util.*;
 public class Lv1_1 {
     public static void main(String[] args) {
 
-
     }
 
     public int[] solution(String[] id_list, String[] report, int k) {
-        int[] answer = new int[id_list.length];
-
-        // Map 정의 및 초기화
-        Map<String, HashSet<String>> map = new HashMap<>();
-        Map<String, Integer> idxMap = new HashMap<>();
+        // key(신고 당한 유저) : value(신고 한 유저) // 중복이면 한 건으로 => hashSet()
+        Map<String,HashSet<String>> reportMemberList = new HashMap<>();
+        // key(유저) : value(유저가 신고결과 메일을 받을 횟수)
+        Map<String,Integer> getMailCount = new HashMap<>();
 
         // Map 초기화
-        for (int i = 0; i < id_list.length; i++) {
-            String name = id_list[i];
-            map.put(name, new HashSet<>());
-            idxMap.put(name, i);
+        for(String id : id_list){
+            getMailCount.put(id,0); // getMailCount Map에 id와 메일횟수 0으로 초기화
+            reportMemberList.put(id, new HashSet<>()); // 신고 당한 유저는 한명씩, 신고자는 여러명일 수 있지만 HashSet으로 중복 제거 초기화
         }
 
         // 신고 기록
-        for (String s : report) {
-            String[] str = s.split(" ");
-            String from = str[0];
-            String to = str[1];
-            map.get(to).add(from);
+        for(String rpt : report){
+            String[] str = rpt.split(" ");
+            String 신고자 = str[0];
+            String 신고당한사람 = str[1];
+
+            reportMemberList.get(신고당한사람).add(신고자);
         }
 
         // 이용정지 메일 발송
-        for (int i = 0; i < id_list.length; i++) {
-            HashSet<String> send = map.get(id_list[i]);
-            if (send.size() >= k) {
-                for (String name : send) {
-                    answer[idxMap.get(name)]++;
+        for(String id : id_list){
+            HashSet<String> reports = reportMemberList.get(id);
+            if(reports.size() >= k){
+                for(String reporter : reports){
+                    int cnt = getMailCount.get(reporter);
+                    getMailCount.put(reporter,cnt+1);
                 }
             }
         }
+
+        // answer에 return 값 셋
+        int[] answer = new int[id_list.length];
+        for(int i = 0; i < id_list.length; i++){
+            answer[i] = getMailCount.get(id_list[i]);
+        }
+
         return answer;
     }
 }
