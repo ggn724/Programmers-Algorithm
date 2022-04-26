@@ -1,7 +1,9 @@
-import java.util.*;
 /*
-* 신고 결과 받기
+* Lv1 신고 결과 받기
 * */
+
+import java.util.*;
+
 public class Lv1_1 {
     public static void main(String[] args) {
 
