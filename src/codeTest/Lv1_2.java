@@ -1,5 +1,7 @@
 package codeTest;
-
+/*
+* Lv1 - 아이디 추천
+* */
 public class Lv1_2 {
 
     public static void main(String[] args) {
