@@ -1,6 +1,7 @@
 package codeTest;
 /*
 * Lv1 - 아이디 추천
+* 정규식 사용
 * */
 public class Lv1_2 {
 
