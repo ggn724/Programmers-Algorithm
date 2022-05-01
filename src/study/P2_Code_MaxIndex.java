@@ -16,10 +16,9 @@ public class P2_Code_MaxIndex {
 
     public static int[] solution(int[] arr) {
         /*
+         * 1. 배열 이용
+         **/
 
-        1. 배열을 이용해서 해결
-
-         */
         // 최대값 구하기
         int max = 0;
         for(int a : arr) if(a > max) max = a;
@@ -38,46 +37,42 @@ public class P2_Code_MaxIndex {
                 answer[index++] = i;
             }
         }
-
-
+        //===========================================================
         /*
-
-        2. 리스트를 이용해서 해결
-
+         * 2. 리스트를 이용해서 해결
          */
+
         // 최대값 구하기
-        int max_ = 0;
-        for(int a : arr) if(a > max_) max_ = a;
+        int max2 = 0;
+        for(int a : arr) if(a > max2) max2 = a;
 
         // 리스트 만들기
-        List<Integer> list_ = new LinkedList<>();
+        List<Integer> list = new LinkedList<>();
 
         // 배열에 인덱스 채우기
-        int indexL = 0;
         for(int i = 0; i < arr.length; i++) {
-            if(arr[i] == max_) {
-                list_.add(i);
+            if(arr[i] == max2) {
+                list.add(i);
             }
         }
 
         // 리스트를 배열로 변환
-        // 1
-        int[] answer__ = list_.stream().mapToInt(Integer::intValue).toArray();
-        // 2
-        int[] answer_ = new int[list_.size()];
-        for(int i = 0; i< list_.size(); i++){
-            answer_[i] = list_.get(i);
+        // 첫번째 방법
+        int[] answer1 = list.stream().mapToInt(Integer::intValue).toArray(); // list를 배열로 변환 하는 방법
+        // 두번째 방법
+        int[] answer2 = new int[list.size()];
+        for(int i = 0; i< list.size(); i++){
+            answer2[i] = list.get(i);
         }
 
-
+        //===========================================================
         /*
-
-        3. 스트림을 이용해서 해결
-
+         * 3. 스트림을 이용해서 해결
          */
-        int max__ = Arrays.stream(arr).max().getAsInt();    // 배열에 최대값 구하기
+        
+        int max3 = Arrays.stream(arr).max().getAsInt();    // 배열에 최대값 구하기
         return IntStream.range(0, arr.length)
-                .filter(i -> arr[i] == max__)
+                .filter(i -> arr[i] == max3)
                 .toArray();
 
         // return answer_;
