@@ -1,15 +1,15 @@
 package study;
 
 /*
-[실습]2-1. 최대값 인덱스 구하기
-1. 배열 방식
-2. 리스트 방식
-3. 스트림 방식
- */
+* [실습] 2-1 최대값 인덱스 구하기
+* [내용] 배열 / 리스트 / 스트림      (3가지 방식)
+* [출처] 프로그래머스
+* */
+
 import java.util.*;
 import java.util.stream.IntStream;
 
-public class P2_Code_MaxIndex {
+public class P2_1_Code {
     public static void main(String[] args){
 
     }
