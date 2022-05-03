@@ -1,6 +1,7 @@
 package codeTest;
 /*
-* Lv1 - 신고 결과 받기
+* [Lv1] - 1. 신고 결과 받기
+* [내용] Map을 이용한 풀이
 * */
 
 import java.util.*;
