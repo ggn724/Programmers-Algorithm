@@ -1,7 +1,7 @@
 package codeTest;
-/*
-* Lv1 - 아이디 추천
-* 정규식...
+/**
+* [Lv1] 아이디 추천
+* [내용] 정규식을 이용한 풀이
 * */
 public class Lv1_2 {
 
