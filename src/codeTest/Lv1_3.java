@@ -1,7 +1,7 @@
 package codeTest;
 /**
- * Lv1 - 키패드 누르기
- * class를 이용한 문제 풀기
+ * [Lv1] 키패드 누르기
+ * [내용] class를 이용한 문제 풀기
  */
 public class Lv1_3 {
     Position left;
