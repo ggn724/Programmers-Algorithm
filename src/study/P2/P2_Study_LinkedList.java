@@ -1,4 +1,4 @@
-package study;
+package study.P2;
 
 import java.util.*;
 

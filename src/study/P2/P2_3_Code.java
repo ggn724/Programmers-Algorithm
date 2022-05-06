@@ -1,6 +1,12 @@
-package study;
+package study.P2;
+/*
+ * [실습] 2-3 자연수 배열 뒤집기
+ * [내용] 1. 배열길이 구해서 배열 정의
+ *        2. 자연수 n자리수 마다 배열에 넣어주기
+ *        3. 배열 뒤집기
+ * [출처] 프로그래머스
+ * */
 
-import java.util.LinkedList;
 import java.util.*;
 import java.util.stream.Stream;
 
@@ -20,6 +26,25 @@ public class P2_3_Code {
             iRet[(len-1)-i] = numSort[i];
         }
         return iRet;
+
+        //////////////////////////////////////////////////////
+        /*
+        * 해설
+        * */
+
+        /*
+        List<Integer> list = new LinkedList<>();
+
+        while (n > 0){
+            int a = (int)n % 10;
+            list.add(a);
+            n /= 10;
+        }
+
+        return list.stream().mapToInt(Integer::intValue).toArray();
+        */
+        //////////////////////////////////////////////////////
+
     }
 
     public static void main(String[] args){

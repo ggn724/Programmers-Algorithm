@@ -1,4 +1,4 @@
-package study;
+package study.P2;
 
 /*
 * [실습] 2-2 순열검사
@@ -18,6 +18,26 @@ public class P2_2_Code {
 				return false;
 		}
 		return true;
+
+
+		//////////////////////////////////////////////////////
+		/*
+		* 해설
+		* */
+
+		// 1. 정답을 만들어 놓고
+		// 2. 문제 배열을 sort 시키고
+		// 3. 배열을 비교
+		/*
+		int[]  answer = new int[arr.length];
+		for(int i=0; i< arr.length; i++) answer[i] = i+1; 		// O(n)
+
+		Arrays.sort(arr);										// O(nlogn)
+
+		return Arrays.equals(answer, arr);						// O(n)
+																//========> 총 O(2*n +nlogn)  =====> O(nlogn)
+		*/
+		//////////////////////////////////////////////////////
 	}
 
 	public static void main(String[] args) {

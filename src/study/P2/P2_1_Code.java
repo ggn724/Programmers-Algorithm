@@ -1,4 +1,4 @@
-package study;
+package study.P2;
 
 /*
 * [실습] 2-1 최대값 인덱스 구하기
