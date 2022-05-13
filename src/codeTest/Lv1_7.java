@@ -11,21 +11,19 @@ public class Lv1_7 {
         int getCntP2 = 0;
         int getCntP3 = 0;
 
-        // 10번만 돌면 누가 1등인지 판단됨.
-
         // 수포자 값 SET
-        int[] P1 = new int[]{1,2,3,4,5,1,2,3,4,5};
-        int[] P2 = new int[]{2,1,2,3,2,4,2,5,2,1};
+        int[] P1 = new int[]{1,2,3,4,5};
+        int[] P2 = new int[]{2,1,2,3,2,4,2,5};
         int[] P3 = new int[]{3,3,1,1,2,2,4,4,5,5};
 
+        // 핵심!!
         for(int i=0; i < answers.length; i++) {
-            if(answers[i] == P1[i]) getCntP1++;
-            if(answers[i] == P2[i]) getCntP2++;
-            if(answers[i] == P3[i]) getCntP3++;
+            if(answers[i] == P1[i%5]) getCntP1++;
+            if(answers[i] == P2[i%8]) getCntP2++;
+            if(answers[i] == P3[i%10]) getCntP3++;
         }
 
         int result = tmpfunc(getCntP1,getCntP2,getCntP3);
-
         int[] answer = Stream.of(String.valueOf(result).split("")).mapToInt(Integer::parseInt).toArray();
         return answer;
     }
