@@ -1,8 +1,9 @@
-package codeTest;
 /**
  * [Lv1] 키패드 누르기
- * [내용] class를 이용한 문제 풀기
  */
+
+package CodingTest.Level1.키패드누르기;
+
 public class Lv1_3 {
     Position left;
     Position right;
@@ -28,12 +29,12 @@ public class Lv1_3 {
             if(finger.equals("L"))
                 left = numPos;
             else
-                right = numPos;               
+                right = numPos;
         }
-        
+
         return answer;
     }
-    
+
     class Position{
         int row;
         int col;
@@ -46,7 +47,7 @@ public class Lv1_3 {
         // Finger L? R? 정하기
         public String getFinger(String hand){
             String finger = hand.equals("right") ? "R":"L";
-            
+
             if(this.col == 0) finger = "L";
             else if(this.col == 2) finger = "R";
             else{
@@ -61,7 +62,7 @@ public class Lv1_3 {
 
             return finger;
         }
-        
+
         // 거리 절대값 구하기
         public int getDistance(Position p){
             return Math.abs(this.row - p.row) + Math.abs(this.col - p.col); // Math.abs - 절대값
@@ -69,7 +70,7 @@ public class Lv1_3 {
     }
 
 
-    // TEST GO!
+    // Test
     public static void main(String[] args) {
         Lv1_3 sol = new Lv1_3();
         int[] num = new int[]{1, 3, 4, 5, 8, 2, 1, 4, 5, 9, 5};

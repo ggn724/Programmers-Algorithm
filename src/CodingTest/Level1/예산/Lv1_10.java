@@ -1,9 +1,12 @@
-package codeTest;
+/**
+ * 예산
+ * */
+
+package CodingTest.Level1.예산;
 
 import java.util.Arrays;
 
 public class Lv1_10 {
-
     public int solution(int[] d, int budget) {
         int answer = 0;
 

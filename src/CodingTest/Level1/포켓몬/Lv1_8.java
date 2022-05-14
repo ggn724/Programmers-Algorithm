@@ -1,4 +1,8 @@
-package codeTest;
+/**
+ * [Lv1] 포켓몬
+ * */
+
+package CodingTest.Level1.포켓몬;
 
 import java.util.ArrayList;
 import java.util.Arrays;

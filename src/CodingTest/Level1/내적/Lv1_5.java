@@ -1,8 +1,8 @@
-package codeTest;
 /**
  * [Lv1] 내적
- * [내용] ...
  */
+
+package CodingTest.Level1.내적;
 
 public class Lv1_5 {
     public int solution(int[] a, int[] b) {
@@ -13,7 +13,7 @@ public class Lv1_5 {
         return answer;
     }
 
-
+    // Test
     public static void main(String[] args){
         int[] a = new int[]{1,2,3,4};
         int[] b = new int[]{-3,-1,0,2};

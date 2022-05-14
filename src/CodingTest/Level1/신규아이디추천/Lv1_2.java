@@ -1,13 +1,10 @@
-package codeTest;
 /**
-* [Lv1] 아이디 추천
-* [내용] 정규식을 이용한 풀이
-* */
+ * [Lv1] 신규 아이디 추천
+ * */
+
+package CodingTest.Level1.신규아이디추천;
+
 public class Lv1_2 {
-
-    public static void main(String[] args) {
-
-    }
     public String solution(String new_id) {
         // 1단계
         new_id = new_id.toLowerCase();
@@ -40,5 +37,13 @@ public class Lv1_2 {
             }
         }
         return new_id;
+    }
+
+    // Test
+    public static void main(String[] args) {
+        String a = "...!@BaT#*..y.abcdefghijklm";
+        Lv1_2 lv1_2 = new Lv1_2();
+        String iRet = lv1_2.solution(a);
+        System.out.println(iRet);
     }
 }

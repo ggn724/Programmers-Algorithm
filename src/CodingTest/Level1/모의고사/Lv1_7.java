@@ -1,8 +1,12 @@
-package codeTest;
+/**
+ * [Lv1] 모의고사
+ * */
+
+package CodingTest.Level1.모의고사;
 
 import java.util.Arrays;
 
-public class Lv1_7_1 {
+public class Lv1_7 {
     public int[] solution(int[] answers) {
 
         // 수포자 방식 SET
@@ -41,18 +45,9 @@ public class Lv1_7_1 {
         return answer;
     }
 
-
-
-
-
-
-
-
-
-
-    // TEST
+    // Test
     public static void main(String[] args) {
-        Lv1_7_1 s7 = new Lv1_7_1();
+        Lv1_7 s7 = new Lv1_7();
         int[] tmp = new int[]{1,3,2,4,2};
         int[] iRet =  s7.solution(tmp);
         System.out.println(Arrays.toString(iRet));

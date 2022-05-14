@@ -1,4 +1,8 @@
-package codeTest;
+/**
+ * 약수의 개수와 덧셈
+ * */
+
+package CodingTest.Level1.약수의개수와덧셈;
 
 public class Lv1_9 {
     public int solution(int left, int right) {
@@ -21,7 +25,7 @@ public class Lv1_9 {
     }
 
 
-    // TEST
+    // Test
     public static void main(String[] args){
         Lv1_9 sp = new Lv1_9();
         int iRet = sp.solution(24,27);

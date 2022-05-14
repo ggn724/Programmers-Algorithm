@@ -1,23 +1,13 @@
-package codeTest;
+/**
+ * [Lv1] 완주하지 못한 선수
+ * */
 
-import java.util.Arrays;
+package CodingTest.Level1.완주하지못한선수;
+
 import java.util.HashMap;
-import java.util.List;
-import java.util.function.Predicate;
-import java.util.stream.Collectors;
 
 public class Lv1_6 {
     public String solution(String[] participant, String[] completion) {
-
-        /* 나의 잘못된 1차 풀이*/
-/*
-        List<String> lsPat =  Arrays.asList(participant);
-        List<String> lsComp = Arrays.asList(completion);
-
-        List<String> resultList = lsPat.stream().filter( person-> lsComp.stream().noneMatch(Predicate.isEqual(person))).collect(Collectors.toList());
-        String answer = resultList.stream().map(n->String.valueOf(n)).collect(Collectors.joining());
-*/
-
         // HashMap 이용 (name , 0)
         String answer = "";
         HashMap<String, Integer> hMap = new HashMap<>();
@@ -38,11 +28,10 @@ public class Lv1_6 {
                 answer = name;
             }
         }
-
         return answer;
     }
 
-
+    // Test
     public static void main(String[] args) {
         String[] x = new String[]{"mislav", "stanko", "mislav", "ana"};
         String[] y = new String[]{"stanko", "ana", "mislav"};
