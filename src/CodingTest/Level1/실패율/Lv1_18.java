@@ -4,32 +4,25 @@ import java.util.*;
 
 public class Lv1_18 {
     public int[] solution(int N, int[] stages) {
-        int[] answer = new int[N];
-        int idx =0;                 // 결과 set  할때 필요한 index
-
         Map<Integer, Double> failMap = new HashMap<>();
         for (int n = 1; n < N + 1; n++) {
             int players = 0;            // 스테이지에 도달한 플레이어 수
             int noClear = 0;            // 아직 클리어 하지 못한 플레이어의 수
 
             for (int i = 0; i < stages.length; i++) {
-                if (n <= stages[i]) players++;
-                if (n == stages[i]) noClear++;
+                if (n <= stages[i]) {
+                    if (n == stages[i]) noClear++;
+                    players++;
+                }
             }
             failMap.put(n, (double) noClear / players);
         }
 
         // Map의 value 값으로 정렬
-
         List<Integer> listKeySet = new ArrayList<>(failMap.keySet());
-
         Collections.sort(listKeySet,(value1,value2) -> (failMap.get(value2).compareTo(failMap.get(value1))));
 
-        for(Integer key : listKeySet){
-            answer[idx] = key;
-            idx++;
-        }
-
+        int[] answer = listKeySet.stream().mapToInt(Integer::intValue).toArray();
         return answer;
     }
 
